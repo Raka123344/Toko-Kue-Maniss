@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Kue Dadakan</title>
+    <link rel="stylesheet" href="tokokue.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FastFoodRestaurant",
+        "name": "Toko Kue Dadakan",
+        "image": "",
+        "@id": "",
+        "url": "https://raka123344.github.io/Toko-Kue-Dadakan/",
+        "telephone": "+6285697706628",
+        "priceRange": "50000 - 70000",
+        "menu": "",
+        "servesCuisine": "",
+        "acceptsReservations": "false",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rajeg",
+            "addressLocality": "Tangerang",
+            "postalCode": "15540",
+            "addressCountry": "ID"
+        }  
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+              "@context": "https://schema.org/", 
+              "@type": "Product", 
+              "name": "chocolate cake",
+              "image": "https://media.istockphoto.com/id/1326149453/id/foto/irisan-kue-cokelat-hitam.jpg?s=612x612&w=0&k=20&c=XoIR1UiGfjB7Z6YJFFhe063nGg9YoaWLCCSqHQoSwB4=",
+              "description": "Kue Coklat yang lezat dan manis.",
+              "offers": {
+                "@type": "Offer",
+                "url": "",
+                "priceCurrency": "IDR",
+                "price": "50000",
+                "availability": "https://schema.org/InStock",
+                "itemCondition": "https://schema.org/NewCondition"
+              }
+            },
+            {
+                "@context": "https://schema.org/", 
+                "@type": "Product", 
+                "name": "Cheese cake",
+                "image": "https://media.istockphoto.com/id/1364933651/id/foto/cheesecake-klasik.jpg?s=612x612&w=0&k=20&c=_kEGihrxC3MflUyMSty4UkglJhEABxpiwvMt10m3-cQ=",
+                "description": "Kue Keju yang creamy dan lezat.",
+                "offers": {
+                  "@type": "Offer",
+                  "url": "",
+                  "priceCurrency": "IDR",
+                  "price": "60000",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition"
+                }
+            },
+            {
+                "@context": "https://schema.org/", 
+                "@type": "Product", 
+                "name": "Red velvet cake",
+                "image": "https://media.istockphoto.com/id/1316080097/id/foto/kue-red-velvet-dengan-blueberry-di-piring-putih-dengan-latar-belakang-hijau-tua.jpg?s=612x612&w=0&k=20&c=fp1AdL5Q6IpfaivodOUm8Yd5mWtTCOCU2Rgqj43--jA=",
+                "description": "Kue Red Velvet yang manis dan cantik.",
+                "offers": {
+                  "@type": "Offer",
+                  "url": "",
+                  "priceCurrency": "IDR",
+                  "price": "70000",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition"
+                }
+            }
+        ]
+    }
+</script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .search-filter {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .search-filter input,
+        .search-filter select {
+            padding: 10px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f953c6;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+            animation: fadeOut 4s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .dark-mode header {
+            background: linear-gradient(90deg, #333, #555);
+        }
+
+        .dark-mode .item-produk {
+            background-color: #444;
+            border-color: #555;
+        }
+
+        .dark-mode .search-filter {
+            background-color: #555;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Toko Kue Dadakan</h1>
+        <p>Kue Terbaik untuk Setiap Momen Spesial Anda</p>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </header>
+
+    <div class="search-filter">
+        <input type="text" id="searchInput" placeholder="Cari produk..." onkeyup="filterProduk()">
+        <select id="priceFilter" onchange="filterProduk()">
+            <option value="">Semua Harga</option>
+            <option value="50000">Rp 50.000</option>
+            <option value="60000">Rp 60.000</option>
+            <option value="70000">Rp 70.000</option>
+        </select>
+    </div>
+
+    <main>
+        <section class="produk" id="produkContainer">
+            <div class="item-produk" data-nama="Chocolate Cake" data-harga="50000">
+                <img src="https://media.istockphoto.com/id/1326149453/id/foto/irisan-kue-cokelat-hitam.jpg?s=612x612&w=0&k=20&c=XoIR1UiGfjB7Z6YJFFhe063nGg9YoaWLCCSqHQoSwB4=" alt="Kue Coklat">
+                <h3>Chocolate Cake</h3>
+                <p>Harga: Rp 50.000</p>
+                <button class="btn-beli" onclick="tambahKeKeranjang('Chocolate Cake', 50000)">Beli</button>
+            </div>
+            <div class="item-produk" data-nama="Cheese Cake" data-harga="60000">
+                <img src="https://media.istockphoto.com/id/1364933651/id/foto/cheesecake-klasik.jpg?s=612x612&w=0&k=20&c=_kEGihrxC3MflUyMSty4UkglJhEABxpiwvMt10m3-cQ=" alt="Kue Keju">
+                <h3>Cheese Cake</h3>
+                <p>Harga: Rp 60.000</p>
+                <button class="btn-beli" onclick="tambahKeKeranjang('Cheese cake', 60000)">Beli</button>
+            </div>
+            <div class="item-produk" data-nama="Red velvet Cake" data-harga="70000">
+                <img src="https://media.istockphoto.com/id/1316080097/id/foto/kue-red-velvet-dengan-blueberry-di-piring-putih-dengan-latar-belakang-hijau-tua.jpg?s=612x612&w=0&k=20&c=fp1AdL5Q6IpfaivodOUm8Yd5mWtTCOCU2Rgqj43--jA=" alt="Kue Red Velvet">
+                <h3>Red velvet cake</h3>
+                <p>Harga: Rp 70.000</p>
+                <button class="btn-beli" onclick="tambahKeKeranjang('Red velvet cake', 70000)">Beli</button>
+            </div>
+            </section>
+            <aside id="keranjangBelanja">
+                <h2>Keranjang Belanja</h2>
+                <ul id="listKeranjang">
+                    <li>Keranjang Anda kosong.</li>
+                </ul>
+                <p id="totalHarga">Total: Rp 0</p>
+                <button onclick="checkout()">Checkout</button>
+            </aside>
+        </main>
+    
+        <div class="toast" id="toast">Produk telah ditambahkan ke keranjang!</div>
+    
+        <script>
+            let darkMode = false;
+    
+            function toggleDarkMode() {
+                darkMode = !darkMode;
+                document.body.classList.toggle('dark-mode', darkMode);
+            }
+    
+            function tambahKeKeranjang(namaProduk, hargaProduk) {
+                const keranjang = document.getElementById('listKeranjang');
+                const totalHargaElem = document.getElementById('totalHarga');
+                const toast = document.getElementById('toast');
+    
+                // Periksa jika keranjang kosong
+                if (keranjang.querySelector('li').textContent === 'Keranjang Anda kosong.') {
+                    keranjang.innerHTML = '';
+                }
+    
+                // Tambahkan produk ke keranjang
+                const listItem = document.createElement('li');
+                listItem.textContent = `${namaProduk} - Rp ${hargaProduk}`;
+                keranjang.appendChild(listItem);
+    
+                // Hitung total harga
+                const totalHarga = Array.from(keranjang.querySelectorAll('li')).reduce((total, item) => {
+                    const harga = parseInt(item.textContent.split('- Rp ')[1]);
+                    return total + harga;
+                }, 0);
+    
+                totalHargaElem.textContent = `Total: Rp ${totalHarga}`;
+    
+                // Tampilkan notifikasi toast
+                toast.style.display = 'block';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 3000);
+            }
+    
+            function filterProduk() {
+                const searchInput = document.getElementById('searchInput').value.toLowerCase();
+                const priceFilter = document.getElementById('priceFilter').value;
+                const produkContainer = document.getElementById('produkContainer');
+                const produkItems = produkContainer.querySelectorAll('.item-produk');
+    
+                produkItems.forEach(item => {
+                    const nama = item.getAttribute('data-nama').toLowerCase();
+                    const harga = item.getAttribute('data-harga');
+                    const matchesSearch = nama.includes(searchInput);
+                    const matchesPrice = !priceFilter || harga === priceFilter;
+    
+                    if (matchesSearch && matchesPrice) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+    
+            function checkout() {
+                alert('Terima kasih telah berbelanja di Toko Kue Dadakan!');
+                document.getElementById('listKeranjang').innerHTML = '<li>Keranjang Anda kosong.</li>';
+                document.getElementById('totalHarga').textContent = 'Total: Rp 0';
+            }
+        </script>
+    </body>
+    </html>
+    
+               

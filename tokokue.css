@@ -1,0 +1,166 @@
+/* Tema manis-manis untuk Toko Kue Dadakan */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #ffe6ee, #ffd1dc, #fff5f8);
+    color: #5e4c5a;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #f953c6, #ff6a75, #ff914d);
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+button {
+    background: linear-gradient(135deg, #ff6a75, #f953c6, #ff914d);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search-filter {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ff6a75, #f953c6, #ff914d);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 10px;
+}
+
+.search-filter input,
+.search-filter select {
+    padding: 10px;
+    margin: 0 5px;
+    border: 2px solid #ffd1dc;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.produk {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.item-produk {
+    background: linear-gradient(135deg, #ffd1dc, #fff5f8, #ffe6ee);
+    border: 2px solid #f9c0d8;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.item-produk:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.item-produk img {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.item-produk h3 {
+    font-size: 1.5em;
+    color: #5e4c5a;
+    margin: 10px 0;
+}
+
+.item-produk p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.btn-beli {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-beli::before {
+    content: '\1F36D'; /* Ikon permen */
+    font-size: 1.2em;
+}
+
+aside {
+    background: linear-gradient(135deg, #ffd1dc, #fff5f8, #ffe6ee);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff914d, #f953c6, #ff6a75);
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    animation: slideIn 0.5s, fadeOut 3.5s 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
